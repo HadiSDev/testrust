@@ -1,0 +1,21 @@
+[package]
+name = "testrust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "testrust"
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+uniffi = { version = "0.28.3", features = [ "cli" ] }
+
+[build-dependencies]
+uniffi = { version = "0.28.3", features = [ "build", "cli" ] }
+uniffi-bindgen-go = { git = "https://github.com/NordSecurity/uniffi-bindgen-go", tag = "v0.2.2+v0.25.0", version = "0.2.2" }
+
+[[bin]]
+# This can be whatever name makes sense for your project, but the rest of this tutorial assumes uniffi-bindgen.
+name = "uniffi-bindgen"
+path = "uniffi-bindgen.rs"

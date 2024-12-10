@@ -1,0 +1,5 @@
+[bindings.python]
+package_name = "testrust"
+
+[bindings.go]
+package_name = "testrust"
